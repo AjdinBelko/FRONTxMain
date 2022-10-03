@@ -1,0 +1,224 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 6,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-10-03T13:55:29.812Z",
+    "end": "2022-10-03T13:55:35.323Z",
+    "duration": 5511,
+    "testsRegistered": 7,
+    "passPercent": 85.71428571428571,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c7b21ddf-7668-41e0-a2d0-681e601de7e1",
+      "title": "",
+      "fullFile": "cypress/e2e/HeaderOption.cy.js",
+      "file": "cypress/e2e/HeaderOption.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4886a3b4-a7ac-4a83-a0cd-16f6b47860d3",
+          "title": "FrontexTesting HomePage",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "HomePage [Validation",
+              "fullTitle": "FrontexTesting HomePage HomePage [Validation",
+              "timedOut": null,
+              "duration": 1384,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// repeated home page validation\ncy.visit('https://dev-f0x-wallet.netlify.app/nft/ethereum/0x63D360Aa96470B806CD1dFd709A155039bdA37F8');\ncy.url().should('eq', 'https://dev-f0x-wallet.netlify.app/nft/ethereum/0x63D360Aa96470B806CD1dFd709A155039bdA37F8'); // cy.request\ncy.request({\n  method: 'GET',\n  url: '/0x63D360Aa96470B806CD1dFd709A155039bdA37F',\n  failOnStatusCode: false\n}).then(resp => {\n  expect(resp.status).to.eq(404);\n  expect(resp.body).to.have.length(11195);\n  expect(resp).to.have.property('headers');\n  expect(resp).to.have.property('duration');\n  cy.log(resp);\n});",
+              "err": {},
+              "uuid": "3521d877-5ba4-42f0-89b9-a2f5694f3473",
+              "parentUUID": "4886a3b4-a7ac-4a83-a0cd-16f6b47860d3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Dashboard Validation and function",
+              "fullTitle": "FrontexTesting HomePage Dashboard Validation and function",
+              "timedOut": null,
+              "duration": 2537,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//getting the Dashboard functional item\ncy.get('.sticky > :nth-child(2) > .flex').find('>li').should('have.length', '6').contains('Dashboard').click({\n  setTimeout: 2000\n}); // assertion for new page\ncy.url().should('eq', 'https://dev-f0x-wallet.netlify.app/'); //also the new fields are in after the loadout/redirection\n//description\ncy.xpath(\"//div[@class='max-w-md mx-auto py-10 px-10']\").should('have.text', 'Please enter your email to loginLogin'); // input field\ncy.get('#email').should('be.empty').should('have.attr', 'placeholder', 'Email'); //submit button\ncy.get('.py-2').should('be.visible').and('have.text', 'Login');\ncy.log('Dashboard');",
+              "err": {},
+              "uuid": "5d6da111-fd4f-487d-bda4-6dba38566967",
+              "parentUUID": "4886a3b4-a7ac-4a83-a0cd-16f6b47860d3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "NFTs option validation",
+              "fullTitle": "FrontexTesting HomePage NFTs option validation",
+              "timedOut": null,
+              "duration": 213,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//nfts option form menu bar\ncy.get('.sticky > :nth-child(2) > .flex').find('>li').should('have.length', '6').contains('NFTs').click({\n  setTimeout: 2000\n}); //new options and fields\n//but first simple request\ncy.request('https://dev-f0x-wallet.netlify.app/nfts').as('NFTs');\ncy.get('@NFTs').should(response => {\n  expect(response.body).to.have.length(11957);\n  expect(response).to.have.property('headers');\n  expect(response).to.have.property('duration');\n}); //new options \ncy.get('.max-w-6xl > :nth-child(1)').should('have.text', 'You own 0 NFTsSpanning 7 collections'); // cy.get('.max-w-6xl > :nth-child(2)')\ncy.get('.max-w-6xl > :nth-child(2)').find('button').should('have.text', 'Receive NFTBuy NFT'); //also \ncy.get('.space-y-8').find('> li').should('have.length', '8').should($lis => {\n  expect($lis, '8 items').to.have.length(8);\n  expect($lis.eq(0), 'first item').to.contain('Sneaks of Nature');\n  expect($lis.eq(1), 'second item').to.contain('Sneaks of Nature');\n  expect($lis.eq(3), 'third item').to.contain('Sneaks of Nature');\n  expect($lis.eq(4), 'forth item').to.contain('Sneaks of Nature');\n  expect($lis.eq(5), 'fifth item').to.contain('Sneaks of Nature');\n  expect($lis.eq(6), 'sixth item').to.contain('Sneaks of Nature');\n  expect($lis.eq(7), 'seventh item').to.contain('Sneaks of Nature'); // expect($lis.eq(8), 'third item').to.contain('Sneaks of Nature')\n});",
+              "err": {},
+              "uuid": "665d05fa-d688-4a91-ab2f-7b7c499d83ac",
+              "parentUUID": "4886a3b4-a7ac-4a83-a0cd-16f6b47860d3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Tokens options validation",
+              "fullTitle": "FrontexTesting HomePage Tokens options validation",
+              "timedOut": null,
+              "duration": 95,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//getting to the menu\ncy.get('.sticky > :nth-child(2) > .flex').find('>li').should('have.length', '6').contains('Tokens').click({\n  setTimeout: 2000\n}); //new url\ncy.url().should('eq', 'https://dev-f0x-wallet.netlify.app/tokens'); //also\ncy.get('.h-full').should('have.text', 'Ethereum ballance: 0.0IMX ballance: 0.0');",
+              "err": {},
+              "uuid": "68026dfc-3ea6-4fb7-98f7-33caa0fe979f",
+              "parentUUID": "4886a3b4-a7ac-4a83-a0cd-16f6b47860d3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Connect option validation",
+              "fullTitle": "FrontexTesting HomePage Connect option validation",
+              "timedOut": null,
+              "duration": 88,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//connect option validation\ncy.get('.sticky > :nth-child(2) > .flex').find('>li').should('have.length', '6').contains('Connect').click({\n  setTimeout: 2000\n}); //new url\ncy.url().should('eq', 'https://dev-f0x-wallet.netlify.app/connect'); //empty page of site",
+              "err": {},
+              "uuid": "12d4eb3c-7809-4cb7-905b-637c93713c37",
+              "parentUUID": "4886a3b4-a7ac-4a83-a0cd-16f6b47860d3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Chat functions validation",
+              "fullTitle": "FrontexTesting HomePage Chat functions validation",
+              "timedOut": null,
+              "duration": 86,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//Chat opetion\ncy.get('.sticky > :nth-child(2) > .flex').find('>li').should('have.length', '6').contains('Chat').click({\n  setTimeout: 2000\n}); //new url\ncy.url().should('eq', 'https://dev-f0x-wallet.netlify.app/chat'); //same page as previous one \n//input fields are already asserted and tested",
+              "err": {},
+              "uuid": "e39d4bad-c0a6-4775-82db-2588eba7ad2c",
+              "parentUUID": "4886a3b4-a7ac-4a83-a0cd-16f6b47860d3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Settings functions validation",
+              "fullTitle": "FrontexTesting HomePage Settings functions validation",
+              "timedOut": null,
+              "duration": 188,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//Settings Option\ncy.get('.sticky > :nth-child(2) > .flex').find('>li').should('have.length', '6').contains('Settings').click(); //new url\ncy.url().should('eq', 'https://dev-f0x-wallet.netlify.app/settings'); // new options \ncy.get('.max-w-md > .flex').should('have.text', 'Choose networksMainnetRopstenGoerliSave').should('be.visible'); //new\ncy.get('.mx-5').select('ropsten').should('have.value', 'ropsten'); //without save\ncy.get('.py-2').should('be.visible').should('have.text', 'Save'); //click() if needed",
+              "err": {
+                "message": "Error: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > Magic RPC Error: [-32603] Internal error: User denied account access.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+                "estack": "Error: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > Magic RPC Error: [-32603] Internal error: User denied account access.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n    at <unknown> (https://dev-f0x-wallet.netlify.app/_next/static/chunks/pages/_app-7c72f9765a958d52.js:5:3463)",
+                "diff": null
+              },
+              "uuid": "8c47a9b6-7e05-4e59-97a1-43ed7e4eb5eb",
+              "parentUUID": "4886a3b4-a7ac-4a83-a0cd-16f6b47860d3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3521d877-5ba4-42f0-89b9-a2f5694f3473",
+            "5d6da111-fd4f-487d-bda4-6dba38566967",
+            "665d05fa-d688-4a91-ab2f-7b7c499d83ac",
+            "68026dfc-3ea6-4fb7-98f7-33caa0fe979f",
+            "12d4eb3c-7809-4cb7-905b-637c93713c37",
+            "e39d4bad-c0a6-4775-82db-2588eba7ad2c"
+          ],
+          "failures": [
+            "8c47a9b6-7e05-4e59-97a1-43ed7e4eb5eb"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 4591,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

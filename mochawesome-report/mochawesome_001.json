@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-10-03T13:55:23.978Z",
+    "end": "2022-10-03T13:55:27.589Z",
+    "duration": 3611,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "629636a6-a674-42c0-9aa1-044e1ced8948",
+      "title": "",
+      "fullFile": "cypress/e2e/FooterBarFunctions.cy.js",
+      "file": "cypress/e2e/FooterBarFunctions.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e4bd6183-6c8f-451c-9c82-23abf22b39e0",
+          "title": "FrontexTesting HomePage",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Support link / area",
+              "fullTitle": "FrontexTesting HomePage Support link / area",
+              "timedOut": null,
+              "duration": 1321,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('nav > .flex').find('> li').contains('Support').click();\ncy.window().then(win => {\n  cy.stub(win, 'open', url => {\n    win.location.href = 'https://dev-f0x-wallet.netlify.app/support';\n  }).as(\"popup\");\n}); //new area \ncy.xpath(\"//h2[normalize-space()='This page could not be found.']\").should('have.text', 'This page could not be found.');",
+              "err": {},
+              "uuid": "16305b9b-7687-413e-945c-246850dd386d",
+              "parentUUID": "e4bd6183-6c8f-451c-9c82-23abf22b39e0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "FAQ link / area",
+              "fullTitle": "FrontexTesting HomePage FAQ link / area",
+              "timedOut": null,
+              "duration": 507,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('nav > .flex').find('> li').contains('FAQs').click();\ncy.window().then(win => {\n  cy.stub(win, 'open', url => {\n    win.location.href = 'https://dev-f0x-wallet.netlify.app/faqs';\n  }).as(\"popup\");\n}); //new area \ncy.xpath(\"//h2[normalize-space()='This page could not be found.']\").should('have.text', 'This page could not be found.');",
+              "err": {},
+              "uuid": "b38a4907-9645-4a12-8bf8-af96b7a9ffcd",
+              "parentUUID": "e4bd6183-6c8f-451c-9c82-23abf22b39e0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Marketplace / area",
+              "fullTitle": "FrontexTesting HomePage Marketplace / area",
+              "timedOut": null,
+              "duration": 436,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('nav > .flex').find('> li').contains('Marketplace').click();\ncy.window().then(win => {\n  cy.stub(win, 'open', url => {\n    win.location.href = 'https://dev-f0x-wallet.netlify.app/marketplace';\n  }).as(\"popup\");\n}); //new area \ncy.xpath(\"//h2[normalize-space()='This page could not be found.']\").should('have.text', 'This page could not be found.');",
+              "err": {},
+              "uuid": "7c0edd92-3cce-4183-be3a-e4de11a3eb82",
+              "parentUUID": "e4bd6183-6c8f-451c-9c82-23abf22b39e0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "16305b9b-7687-413e-945c-246850dd386d",
+            "b38a4907-9645-4a12-8bf8-af96b7a9ffcd",
+            "7c0edd92-3cce-4183-be3a-e4de11a3eb82"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2264,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
